@@ -1,8 +1,6 @@
-import { Player, User } from "@prisma/client";
-import { PlayerProfile } from "@/protocols/player.protocols";
-import { AuthUser, PlayerUser } from "@/protocols/user.protocols";
+import { User } from "@prisma/client";
+import { PlayerUser } from "@/protocols/user.protocols";
 import { userRepository } from "@/repositories/user.repository";
-import playerRepository from "@/repositories/player.repository";
 import customErrors from "@/errors/customErrors";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
