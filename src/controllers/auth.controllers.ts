@@ -8,8 +8,8 @@ export async function signUp(req: Request, res: Response): Promise<void> {
     const player = req.body as PlayerUser;
     if (!player) throw customErrors.unprocessableEntity("player");
 
-    const result = await authService.signUp(player);
-    if (result == null) throw customErrors.conflict("nick or email of player");
+    /*const result = */await authService.signUp(player);
+    // if (result == null) throw customErrors.conflict("nick or email of player");
 
     res.sendStatus(httpStatus.CREATED);
 }
