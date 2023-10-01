@@ -7,8 +7,9 @@ import { update, deleteById, find, count } from "@/controllers/player.controller
 const router = Router();
 router
     .get("/count", count)
-    .get("/find-by", validateAuth, find)
-    .patch("/", validateAuth, validateSchema(updatePlayerSchema), update)
-    .delete("/", validateAuth, deleteById);
+    .all("/*", validateAuth)
+    .get("/find-by", find)
+    .patch("/", validateSchema(updatePlayerSchema), update)
+    .delete("/", deleteById);
 
 export default router;
