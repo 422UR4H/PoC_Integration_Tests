@@ -2,7 +2,7 @@ import { AuthUser, PlayerUser, UpdateUser } from "@/protocols/user.protocols";
 import Joi, { Root } from "joi";
 import JoiDate from "@joi/date";
 
-const JoiDateExtended = Joi.extend(JoiDate);
+const JoiDateExtended = Joi.extend(JoiDate) as Root;
 
 export const userSchema = Joi.object<AuthUser>({
     email: Joi.string().email().min(9).max(64).required(),
